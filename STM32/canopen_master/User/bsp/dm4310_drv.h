@@ -3,7 +3,6 @@
 #include "main.h"
 #include "fdcan.h"
 #include "can_bsp.h"
-#include "tsja_func.h"
 #include "elmo_func.h"
 
 typedef union
