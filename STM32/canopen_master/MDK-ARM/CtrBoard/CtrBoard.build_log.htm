@@ -21,22 +21,36 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\harlab\Documents\GitHub\dm_-canopen\¿ØÖÆÀý³Ì\STM32\canopen_master\MDK-ARM\CtrBoard.uvprojx
+C:\Users\harlab\Documents\GitHub\dm02_elmo_canopen\STM32\canopen_master\MDK-ARM\CtrBoard.uvprojx
 Project File Date:  07/12/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\Bin'
 Build target 'CtrBoard'
-compiling dm4310_drv.c...
-..\User\bsp\tsja_func.h(53): warning:  #1-D: last line of file ends without a newline
+compiling co_app.c...
+../User/bsp/tsja_func.h(53): warning:  #1-D: last line of file ends without a newline
   #endif
-..\User\bsp\dm4310_drv.c(632): warning:  #1-D: last line of file ends without a newline
-  }
-..\User\bsp\dm4310_drv.c: 2 warnings, 0 errors
+../User/bsp/elmo_func.h(50): warning:  #47-D: incompatible redefinition of macro "TPDO_EVENT_TIMER_MS"  (declared at line 51 of "../User/bsp/tsja_func.h")
+  #define TPDO_EVENT_TIMER_MS 5U
+../User/bsp/elmo_func.h(52): warning:  #1-D: last line of file ends without a newline
+  #endif
+../User/bsp/axdr_func.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\User\canopen_node\CANopenNode_STM32\co_app.c(35): warning:  #177-D: variable "time"  was declared but never referenced
+      uint32_t time;
+..\User\canopen_node\CANopenNode_STM32\co_app.c(141): warning:  #188-D: enumerated type mixed with another type
+          return -1;
+..\User\canopen_node\CANopenNode_STM32\co_app.c(141): warning:  #68-D: integer conversion resulted in a change of sign
+          return -1;
+..\User\canopen_node\CANopenNode_STM32\co_app.c(149): warning:  #188-D: enumerated type mixed with another type
+          return -1;
+..\User\canopen_node\CANopenNode_STM32\co_app.c(149): warning:  #68-D: integer conversion resulted in a change of sign
+          return -1;
+..\User\canopen_node\CANopenNode_STM32\co_app.c: 9 warnings, 0 errors
 linking...
-Program Size: Code=36644 RO-data=3476 RW-data=1356 ZI-data=10220  
+Program Size: Code=37504 RO-data=3020 RW-data=1148 ZI-data=10172  
 FromELF: creating hex file...
-"CtrBoard\CtrBoard.axf" - 0 Error(s), 2 Warning(s).
+"CtrBoard\CtrBoard.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 

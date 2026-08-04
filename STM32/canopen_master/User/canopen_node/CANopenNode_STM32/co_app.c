@@ -7,8 +7,8 @@
 #include "delay.h"
 #include "stdio.h"
 #include "dm4310_drv.h"
-#include "tsja_func.h"
 #include "axdr_func.h"
+#include "elmo_func.h"
 canopen_node_t canopen_node;
 
 extern CO_t *CO;
@@ -22,16 +22,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     if (htim == &htim4)
     {
-
-#if USE_TSJA_MOTOR
-        tsja_motor_ctrl_send(&motor[M1]);
-        tsja_motor_fbdata(&motor[M1]);
-#endif
-
-#if USE_AXDR_MOTOR
-        axdr_motor_ctrl_send(&axdr_motor[0]);
-        axdr_motor_fbdata(&axdr_motor[0]);
-#endif
+        elmo_motor_ctrl_send(&motor[M1]);
+        elmo_motor_fbdata(&motor[M1]);
+        elmo_motor_ctrl_send(&motor[M2]);
+        elmo_motor_fbdata(&motor[M2]);
     }
 }
 
@@ -49,72 +43,40 @@ void canopen_init(void)
 
     canopen_app_init(&canopen_node);
 
-#if USE_TSJA_MOTOR
-    motor[M1].id = 1;
-    motor[M1].ctrl.mode = TSJA_MODE_CST;
+    motor[M1].id = 0x01;
+    motor[M1].ctrl.mode = ELMO_MODE_Profile_Velocity;
     motor[M1].ctrl.tor_set = 0.0f;
     motor[M1].ctrl.vel_set = 0.0f;
     motor[M1].ctrl.pos_set = 0.0f;
-    uint8_t ret = 0;
-    /*
-     * 1. 配置 Slave RPDO
-     * Master TPDO -> Slave RPDO
-     */
-    ret = tsja_rpdo_init(&motor[M1], motor[M1].id);
-    if (ret != 0)
-    {
-        printf("RPDO init failed, ret=%d\n", ret);
-        return;
-    }
 
-    /*
-     * 2. 配置 Slave TPDO
-     * Slave TPDO -> Master RPDO
-     */
-    ret = tsja_tpdo_init(&motor[M1], motor[M1].id);
-    if (ret != 0)
-    {
-        printf("TPDO init failed, ret=%d\n", ret);
-        return;
-    }
+    motor[M2].id = 0x02;
+    motor[M2].ctrl.mode = ELMO_MODE_Profile_Velocity;
+    motor[M2].ctrl.tor_set = 0.0f;
+    motor[M2].ctrl.vel_set = 0.0f;
+    motor[M2].ctrl.pos_set = 0.0f;
 
-    CANopen_SendNMT_Start(&hfdcan1, motor[M1].id); // 发送NMT启动命令，进入运行状态
+    elmo_motor_para_set(&motor[M1], motor[M1].id);
+    elmo_tpdo_init(&motor[M1], motor[M1].id);
+    elmo_rpdo_init(&motor[M1], motor[M1].id);
+    elmo_slave_switch_on(&motor[M1], motor[M1].id);
+    NMT_Start(&hfdcan1, motor[M1].id); // 发送NMT启动命令，进入运行状态
+    elmo_slave_mode_enable(&motor[M1], motor[M1].id, motor[M1].ctrl.mode);
 
-#endif
-#ifdef USE_AXDR_MOTOR
-    axdr_motor[0].id = 2;
-    axdr_motor[0].axdr_ctrl.mode = AXDR_MODE_CST;
-    axdr_motor[0].axdr_ctrl.tor_set = 0.0f;
-    axdr_motor[0].axdr_ctrl.vel_set = 0.0f;
-    axdr_motor[0].axdr_ctrl.pos_set = 0.0f;
-    open_axdr_tpdo(&axdr_motor[0]);
-#endif
+    elmo_motor_para_set(&motor[M2], motor[M2].id);
+    elmo_tpdo_init(&motor[M2], motor[M2].id);
+    elmo_rpdo_init(&motor[M2], motor[M2].id);
+    elmo_slave_switch_on(&motor[M2], motor[M2].id);
+    NMT_Start(&hfdcan1, motor[M2].id); // 发送NMT启动命令，进入运行状态
+    elmo_slave_mode_enable(&motor[M2], motor[M2].id, motor[M2].ctrl.mode);
+    NMT_Start(&hfdcan1, motor[M2].id); // 发送NMT启动命令，进入运行状态
     /*
-     * 3. 启动 TIM4
+     * 启动 TIM4
      * TIM4 里周期执行：
      * dm4310_ctrl_send()
      * dm4310_fbdata()
      */
-    HAL_TIM_Base_Start_IT(&htim4);
-}
 
-void tsja_state_init_poll(uint8_t *tsja_init_done_ptr)
-{
-    tsja_init_ret_t ret = tsja_slave_init_poll(&motor[M1], motor[M1].id);
-    if (ret == TSJA_INIT_RET_OK)
-    {
-        *tsja_init_done_ptr = 1;
-        printf("tsja init done, %d\n", motor[M1].id);
-    }
-    else if (ret == TSJA_INIT_RET_RUNNING)
-    {
-        // still running
-    }
-    else
-    {
-        // error
-        printf("tsja init failed, ret=%d\n", ret);
-    }
+    HAL_TIM_Base_Start_IT(&htim4);
 }
 
 /* read sdo data */

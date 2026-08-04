@@ -1,7 +1,7 @@
 Dependencies for Project 'CtrBoard', Target 'CtrBoard': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCOMPLIE506
 F (startup_stm32h723xx.s)(0x6A4AA041)(--cpu Cortex-M7.fp.dp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 540" --pd "STM32H723xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32h723xx.lst --xref -o ctrboard\startup_stm32h723xx.o --depend ctrboard\startup_stm32h723xx.d)
-F (../Core/Src/main.c)(0x6A4F4B3E)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\main.o --omf_browse ctrboard\main.crf --depend ctrboard\main.d)
+F (../Core/Src/main.c)(0x6A6F923E)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\main.o --omf_browse ctrboard\main.crf --depend ctrboard\main.d)
 I (../Core/Inc/main.h)(0x6A46A636)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x6A46A5FF)
 I (../Core/Inc/stm32h7xx_hal_conf.h)(0x6A46A6DD)
@@ -46,7 +46,7 @@ I (../Core/Inc/spi.h)(0x6A46A6DB)
 I (../Core/Inc/tim.h)(0x6A4684CD)
 I (../Core/Inc/usart.h)(0x6A4AA03D)
 I (../Core/Inc/gpio.h)(0x6A4684CD)
-I (../User/canopen_node/CANopenNode_STM32/co_app.h)(0x6A529A7D)
+I (../User/canopen_node/CANopenNode_STM32/co_app.h)(0x6A6F67DB)
 I (../User/canopen_node/CANopenNode_STM32/main.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/301/CO_SDOclient.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/301/CO_driver.h)(0x6A4684CE)
@@ -73,12 +73,13 @@ I (../User/canopen_node/CANopenNode/305/CO_LSS.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/305/CO_LSSmaster.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/309/CO_gateway_ascii.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/extra/CO_trace.h)(0x6A4684CE)
-I (../User/canopen_node/CANopenNode_STM32/OD.h)(0x6A529C15)
+I (../User/canopen_node/CANopenNode_STM32/OD.h)(0x6A70BF06)
 I (../User/bsp/delay.h)(0x6A4684CE)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\stdio.h)(0x5E8E3CC2)
-I (../User/bsp/dm4310_drv.h)(0x6A5297E7)
+I (../User/bsp/dm4310_drv.h)(0x6A705C98)
 I (../User/bsp/can_bsp.h)(0x6A4684CE)
 I (../User/bsp/tsja_func.h)(0x6A5296B7)
+I (../User/bsp/elmo_func.h)(0x6A70B8EF)
 I (../User/bsp/ws2812.h)(0x6A46A5E4)
 F (../Core/Src/gpio.c)(0x6A4AA03B)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\gpio.o --omf_browse ctrboard\gpio.crf --depend ctrboard\gpio.d)
 I (../Core/Inc/gpio.h)(0x6A4684CD)
@@ -2287,10 +2288,10 @@ I (../User/canopen_node/CANopenNode/305/CO_LSS.h)(0x6A4684CE)
 I (..\User\canopen_node\CANopenNode\305/CO_LSSmaster.h)(0x6A4684CE)
 I (..\User\canopen_node\CANopenNode\309/CO_gateway_ascii.h)(0x6A4684CE)
 I (..\User\canopen_node\CANopenNode\extra/CO_trace.h)(0x6A4684CE)
-I (../User/canopen_node/CANopenNode_STM32/OD.h)(0x6A529C15)
+I (../User/canopen_node/CANopenNode_STM32/OD.h)(0x6A70BF06)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\stdlib.h)(0x5E8E3CC2)
-F (..\User\canopen_node\CANopenNode_STM32\co_app.c)(0x6A529BB9)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\co_app.o --omf_browse ctrboard\co_app.crf --depend ctrboard\co_app.d)
-I (..\User\canopen_node\CANopenNode_STM32\co_app.h)(0x6A529A7D)
+F (..\User\canopen_node\CANopenNode_STM32\co_app.c)(0x6A70C20F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\co_app.o --omf_browse ctrboard\co_app.crf --depend ctrboard\co_app.d)
+I (..\User\canopen_node\CANopenNode_STM32\co_app.h)(0x6A6F67DB)
 I (..\User\canopen_node\CANopenNode_STM32\main.h)(0x6A4684CE)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x6A46A5FF)
 I (../Core/Inc/stm32h7xx_hal_conf.h)(0x6A46A6DD)
@@ -2357,13 +2358,14 @@ I (../User/canopen_node/CANopenNode/305/CO_LSS.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/305/CO_LSSmaster.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/309/CO_gateway_ascii.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/extra/CO_trace.h)(0x6A4684CE)
-I (..\User\canopen_node\CANopenNode_STM32\OD.h)(0x6A529C15)
+I (..\User\canopen_node\CANopenNode_STM32\OD.h)(0x6A70BF06)
 I (../Core/Inc/tim.h)(0x6A4684CD)
 I (../User/bsp/delay.h)(0x6A4684CE)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\stdio.h)(0x5E8E3CC2)
-I (../User/bsp/dm4310_drv.h)(0x6A5297E7)
+I (../User/bsp/dm4310_drv.h)(0x6A705C98)
 I (../User/bsp/can_bsp.h)(0x6A4684CE)
 I (../User/bsp/tsja_func.h)(0x6A5296B7)
+I (../User/bsp/elmo_func.h)(0x6A70B8EF)
 I (../User/bsp/axdr_func.h)(0x6A529BDC)
 F (..\User\canopen_node\CANopenNode_STM32\co_bsp.c)(0x6A470E80)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\co_bsp.o --omf_browse ctrboard\co_bsp.crf --depend ctrboard\co_bsp.d)
 I (..\User\canopen_node\CANopenNode_STM32\co_bsp.h)(0x6A4684CE)
@@ -2433,7 +2435,7 @@ I (../User/canopen_node/CANopenNode/extra/CO_trace.h)(0x6A4684CE)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\stdio.h)(0x5E8E3CC2)
 I (..\User\canopen_node\CANopenNode_STM32\co_stblank.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/storage/CO_storage.h)(0x6A4684CE)
-I (..\User\canopen_node\CANopenNode_STM32\OD.h)(0x6A529C15)
+I (..\User\canopen_node\CANopenNode_STM32\OD.h)(0x6A70BF06)
 F (..\User\canopen_node\CANopenNode_STM32\co_drv.c)(0x6A4AA7F1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\co_drv.o --omf_browse ctrboard\co_drv.crf --depend ctrboard\co_drv.d)
 I (../User/canopen_node/CANopenNode/301/CO_driver.h)(0x6A4684CE)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\string.h)(0x5E8E3CC2)
@@ -2547,7 +2549,7 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x6A46A5FF)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x6A46A5FF)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\stdbool.h)(0x5E8E3CC2)
 I (../User/canopen_node/CANopenNode/301/CO_ODinterface.h)(0x6A4684CE)
-F (..\User\canopen_node\CANopenNode_STM32\OD.c)(0x6A529C15)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\od.o --omf_browse ctrboard\od.crf --depend ctrboard\od.d)
+F (..\User\canopen_node\CANopenNode_STM32\OD.c)(0x6A70BF06)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\od.o --omf_browse ctrboard\od.crf --depend ctrboard\od.d)
 I (../User/canopen_node/CANopenNode/301/CO_ODinterface.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/301/CO_driver.h)(0x6A4684CE)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\string.h)(0x5E8E3CC2)
@@ -2593,7 +2595,7 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x6A46A5FF)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x6A46A5FF)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x6A46A5FF)
 I (C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\include\stdbool.h)(0x5E8E3CC2)
-I (..\User\canopen_node\CANopenNode_STM32\OD.h)(0x6A529C15)
+I (..\User\canopen_node\CANopenNode_STM32\OD.h)(0x6A70BF06)
 F (..\User\bsp\can_bsp.c)(0x6A4684CE)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\can_bsp.o --omf_browse ctrboard\can_bsp.crf --depend ctrboard\can_bsp.d)
 I (..\User\bsp\can_bsp.h)(0x6A4684CE)
 I (../Core/Inc/main.h)(0x6A46A636)
@@ -2677,8 +2679,8 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x6A46A5FF)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x6A46A5FF)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x6A46A5FF)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x6A46A5FF)
-F (..\User\bsp\dm4310_drv.c)(0x6A53A467)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\dm4310_drv.o --omf_browse ctrboard\dm4310_drv.crf --depend ctrboard\dm4310_drv.d)
-I (..\User\bsp\dm4310_drv.h)(0x6A5297E7)
+F (..\User\bsp\dm4310_drv.c)(0x6A70B9FC)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\dm4310_drv.o --omf_browse ctrboard\dm4310_drv.crf --depend ctrboard\dm4310_drv.d)
+I (..\User\bsp\dm4310_drv.h)(0x6A705C98)
 I (../Core/Inc/main.h)(0x6A46A636)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x6A46A5FF)
 I (../Core/Inc/stm32h7xx_hal_conf.h)(0x6A46A6DD)
@@ -2721,7 +2723,8 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x6A46A5FF)
 I (../Core/Inc/fdcan.h)(0x6A4684CD)
 I (..\User\bsp\can_bsp.h)(0x6A4684CE)
 I (..\User\bsp\tsja_func.h)(0x6A5296B7)
-I (../User/canopen_node/CANopenNode_STM32/co_app.h)(0x6A529A7D)
+I (..\User\bsp\elmo_func.h)(0x6A70B8EF)
+I (../User/canopen_node/CANopenNode_STM32/co_app.h)(0x6A6F67DB)
 I (../User/canopen_node/CANopenNode_STM32/main.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/301/CO_SDOclient.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/301/CO_driver.h)(0x6A4684CE)
@@ -2748,7 +2751,7 @@ I (../User/canopen_node/CANopenNode/305/CO_LSS.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/305/CO_LSSmaster.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/309/CO_gateway_ascii.h)(0x6A4684CE)
 I (../User/canopen_node/CANopenNode/extra/CO_trace.h)(0x6A4684CE)
-I (../User/canopen_node/CANopenNode_STM32/OD.h)(0x6A529C15)
+I (../User/canopen_node/CANopenNode_STM32/OD.h)(0x6A70BF06)
 F (..\User\bsp\ws2812.c)(0x6A46A62C)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User -I ../User/bsp -I ../User/canopen_node/CANopenNode -I ../User/canopen_node/CANopenNode_STM32-I.\RTE\_CtrBoard-IC:\Users\harlab\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="540" -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx-o ctrboard\ws2812.o --omf_browse ctrboard\ws2812.crf --depend ctrboard\ws2812.d)
 I (..\User\bsp\ws2812.h)(0x6A46A5E4)
 I (../Core/Inc/main.h)(0x6A46A636)

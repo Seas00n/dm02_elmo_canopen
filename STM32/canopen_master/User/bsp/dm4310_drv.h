@@ -4,6 +4,7 @@
 #include "fdcan.h"
 #include "can_bsp.h"
 #include "tsja_func.h"
+#include "elmo_func.h"
 
 typedef union
 {
@@ -18,7 +19,6 @@ typedef union
 	int16_t i16_val;
 	uint8_t u8_val[2];
 } data_u16;
-
 typedef union
 {
 	uint8_t u8_val;
@@ -41,9 +41,7 @@ typedef struct
 	float pos;
 	float vel;
 	float tor;
-
-	float Tmos;
-	float Tcoil;
+	float cur;
 } motor_fbpara_t;
 
 // 电机参数设置结构体
@@ -87,19 +85,32 @@ typedef struct
 	float axdr_freq_emd;
 } axdr_motor_t;
 
-extern motor_t motor[1];
+extern motor_t motor[2];
 extern axdr_motor_t axdr_motor[1];
 
-tsja_init_ret_t tsja_slave_init_poll(motor_t *motor, uint8_t id);
-uint8_t tsja_rpdo_init(motor_t *motor, uint8_t id);
-uint8_t tsja_tpdo_init(motor_t *motor, uint8_t id);
-void tsja_motor_ctrl_send(motor_t *motor);
-void tsja_motor_fbdata(motor_t *motor);
-HAL_StatusTypeDef CANopen_SendNMT_Start(FDCAN_HandleTypeDef *hfdcan, uint8_t node_id);
+// for elmo_init
+uint8_t elmo_motor_para_set(motor_t *motor, uint8_t id);
+uint8_t elmo_rpdo_init(motor_t *motor, uint8_t id);
+uint8_t elmo_tpdo_init(motor_t *motor, uint8_t id);
+uint8_t elmo_slave_switch_on(motor_t *motor, uint8_t id);
+uint8_t elmo_slave_mode_enable(motor_t *motor, uint8_t id, int8_t mode);
+void elmo_motor_ctrl_send(motor_t *motor);
+void elmo_motor_fbdata(motor_t *motor);
 
+// // for tsja motor init
+// tsja_init_ret_t tsja_slave_init_poll(motor_t *motor, uint8_t id);
+// uint8_t tsja_rpdo_init(motor_t *motor, uint8_t id);
+// uint8_t tsja_tpdo_init(motor_t *motor, uint8_t id);
+// void tsja_motor_ctrl_send(motor_t *motor);
+// void tsja_motor_fbdata(motor_t *motor);
+
+// for axdr motor init
 void open_axdr_tpdo(axdr_motor_t *motor);
 void axdr_motor_ctrl_send(axdr_motor_t *motor);
 void axdr_motor_fbdata(axdr_motor_t *motor);
+
+HAL_StatusTypeDef NMT_Start(FDCAN_HandleTypeDef *hfdcan, uint8_t node_id);
+HAL_StatusTypeDef NMT_Reset(FDCAN_HandleTypeDef *hfdcan, uint8_t node_id);
 
 /* =========================
  * OD address getter

@@ -43,6 +43,7 @@ ctrboard\dm4310_drv.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex
 ctrboard\dm4310_drv.o: ../Core/Inc/fdcan.h
 ctrboard\dm4310_drv.o: ..\User\bsp\can_bsp.h
 ctrboard\dm4310_drv.o: ..\User\bsp\tsja_func.h
+ctrboard\dm4310_drv.o: ..\User\bsp\elmo_func.h
 ctrboard\dm4310_drv.o: ../User/canopen_node/CANopenNode_STM32/co_app.h
 ctrboard\dm4310_drv.o: ../User/canopen_node/CANopenNode_STM32/main.h
 ctrboard\dm4310_drv.o: ../User/canopen_node/CANopenNode/301/CO_SDOclient.h

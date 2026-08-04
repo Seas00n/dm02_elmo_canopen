@@ -74,4 +74,5 @@ ctrboard\co_app.o: C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\Bin\.
 ctrboard\co_app.o: ../User/bsp/dm4310_drv.h
 ctrboard\co_app.o: ../User/bsp/can_bsp.h
 ctrboard\co_app.o: ../User/bsp/tsja_func.h
+ctrboard\co_app.o: ../User/bsp/elmo_func.h
 ctrboard\co_app.o: ../User/bsp/axdr_func.h
