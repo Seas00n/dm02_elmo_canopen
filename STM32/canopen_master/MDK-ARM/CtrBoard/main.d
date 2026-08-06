@@ -76,6 +76,6 @@ ctrboard\main.o: ../User/bsp/delay.h
 ctrboard\main.o: C:\Users\harlab\AppData\Local\Keil_v5\ARM\ARMCOMPLIE506\Bin\..\include\stdio.h
 ctrboard\main.o: ../User/bsp/dm4310_drv.h
 ctrboard\main.o: ../User/bsp/can_bsp.h
-ctrboard\main.o: ../User/bsp/tsja_func.h
 ctrboard\main.o: ../User/bsp/elmo_func.h
 ctrboard\main.o: ../User/bsp/ws2812.h
+ctrboard\main.o: ../User/bsp/six_force.h

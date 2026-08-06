@@ -36,6 +36,7 @@
 #include "stdio.h"
 #include "dm4310_drv.h"
 #include "ws2812.h"
+#include "six_force.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -81,6 +82,13 @@ int main(void)
   /* USER CODE BEGIN 1 */
   uint32_t time, time1;
   /* USER CODE END 1 */
+/* Enable the CPU Cache */
+
+  /* Enable I-Cache---------------------------------------------------------*/
+  SCB_EnableICache();
+
+  /* Enable D-Cache---------------------------------------------------------*/
+  SCB_EnableDCache();
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -112,13 +120,23 @@ int main(void)
   delay_ms(200);
   power(1);
   HAL_Delay(1000);
+  six_force_bsp_init();
+  HAL_Delay(5000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint32_t six_force_read_cnt;
   while (1)
   {
     canopen_app_process();
+//    if (six_force_read_cnt++ > 20)
+//    {
+//      if (six_force_read())
+//      {
+//      }
+//      six_force_read_cnt = 0;
+//    }
     // WS2812_Ctrl(r, g, b);
     /* USER CODE END WHILE */
 

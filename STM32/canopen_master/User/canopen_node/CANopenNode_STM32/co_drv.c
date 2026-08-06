@@ -30,6 +30,8 @@
  */
 #include "301/CO_driver.h"
 #include "co_bsp.h"
+// WYX修改 2026 8 5
+#include "six_force.h"
 
 /* Local CAN module object */
 static CO_CANmodule_t *CANModule_local = NULL; /* Local instance of global CAN module */
@@ -628,6 +630,12 @@ prv_read_can_received_msg(CAN_HandleTypeDef *hcan, uint32_t fifo, uint32_t fifo_
  */
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
+    // WYX修改 2026 8 5
+    if (hfdcan == &hfdcan2)
+    {
+        six_force_fdcan_rx_callback();
+        return;
+    }
     if (RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE)
     {
         prv_read_can_received_msg(hfdcan, FDCAN_RX_FIFO0, RxFifo0ITs);

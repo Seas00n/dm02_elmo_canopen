@@ -64,3 +64,6 @@ ctrboard\co_drv.o: ../User/canopen_node/CANopenNode/305/CO_LSS.h
 ctrboard\co_drv.o: ../User/canopen_node/CANopenNode/305/CO_LSSmaster.h
 ctrboard\co_drv.o: ../User/canopen_node/CANopenNode/309/CO_gateway_ascii.h
 ctrboard\co_drv.o: ../User/canopen_node/CANopenNode/extra/CO_trace.h
+ctrboard\co_drv.o: ../User/bsp/six_force.h
+ctrboard\co_drv.o: ../Core/Inc/main.h
+ctrboard\co_drv.o: ../Core/Inc/fdcan.h
